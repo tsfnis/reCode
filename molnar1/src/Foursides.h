@@ -17,7 +17,7 @@ class Foursides {
         void update(float a, float b, float w);
         void draw();
         void fillVector();
-        void disturb(float a, float b);
+        void disturb();
     
     
         
