@@ -11,15 +11,16 @@ class Foursides {
         float x;
         float y;
         float width;
-//        ofPoint points[];
-    vector<ofPoint> newPoints;
+        vector<ofPoint> newPoints;
     
         void setup();
-        void update();
+        void update(float a, float b, float w);
         void draw();
+        void fillVector();
         void disturb(float a, float b);
     
-        //Foursides(); //constructor
+    
+        
 };
 
 

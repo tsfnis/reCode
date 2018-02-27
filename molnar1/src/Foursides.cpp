@@ -9,43 +9,44 @@
 void Foursides::setup(){
     
     //default square size
-    x = 10;
-    y = 10;
-    width = 100;
-    int arraylength = width * 4;
-//    points[arraylength];
+    x = 20;
+    y = 20;
+    width = 250;
     
-    //fill the points array
-    for(int i =0; i<width; i++){                                   //moving along the rows
-        for(int j = 0; j<width; j++){                              //moving along the columns
-            if(j==0 || j == width-1 || i == 0 || i == width-i){    //so only edges, no grid fill
-//                points[i].x = x;
-//                points[i].y = y;
-                newPoints.push_back(ofPoint(x, y));
-                
-                x++;
-            }
-            else{
-                //dont make a point
-            }
-        }
-        y++;
-    }
+    //vector not filled here incase square isn't default size
+    
 }
 
 //--------------------------------------------------------------
-void Foursides::update(){
-    
+void Foursides::update(float a, float b, float w){
+    x = a;
+    y = b;
+    width = w;
 }
 
 //--------------------------------------------------------------
 void Foursides::draw(){
     
-    
     for(int i = 0; i < width*4; i++){
-//        ofDrawCircle(points[i].x, points[i].y, 2);
-        ofDrawCircle(newPoints[i].x, newPoints[i].y, 2);
+        ofDrawCircle(newPoints[i].x, newPoints[i].y, 1);
     }
     
+}
+//--------------------------------------------------------------
+void Foursides::fillVector(){
+    
+    //fill the points array
+    for(int i =0; i<width; i++){                                   //moving along the rows
+        for(int j = 0; j<width; j++){                              //moving along the columns
+            if(j==0 || j == width-1 || i == 0 || i == width-1){    //so only edges, no grid fill
+//                ofPoint temp;
+//                newPoints.push_back(temp);
+                newPoints.push_back(ofPoint(x+i, y+j));
+            }
+            else{
+                //dont make a point
+            }
+        }
+    }
 }
 //--------------------------------------------------------------

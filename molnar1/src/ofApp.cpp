@@ -4,10 +4,18 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-    ofSetWindowShape(800, 800);
-    
+    ofSetWindowShape(600, 600);
     ofBackground(255);
     ofSetColor(0);
+    
+    
+    for(int i = 0; i < 15; i++){
+        Foursides temp;
+        buds.push_back(temp);
+        buds[i].setup();
+        buds[i].update(20 + i*6, 20 + i*6, 250 - (20 + i*6)*2);
+        buds[i].fillVector();
+    }
     
 }
 
@@ -18,10 +26,12 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+   
     
+    for(int i = 0; i < 20; i++){
+        buds[i].draw();
+    }
     
-    bud.setup();
-    bud.draw();
 }
 
 //--------------------------------------------------------------
