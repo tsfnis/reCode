@@ -54,10 +54,10 @@ void Foursides::disturb(){
 
     for(int i=0; i<newPoints.size(); i++){
         if (ofNoise(x*0.2,y*0.2, ofGetElapsedTimef()) < 0.5){
-            newPoints[i].x += ofRandom(-1, 2);
+            newPoints[i].x += ofRandom(2, 2);
         }
         else if (ofNoise(x*0.2,y*0.2, ofGetElapsedTimef()) < 0.8){
-            newPoints[i].y += ofRandom(-1, 2);
+            newPoints[i].y += ofRandom(2, 2);
         }
     }
 

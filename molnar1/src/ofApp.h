@@ -22,7 +22,12 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-        vector<Foursides> buds;
-        Foursides bud; 
-		
+    
+        vector<Foursides> budsA;    //a vector of squares for each quadrant
+        vector<Foursides> budsB;
+        vector<Foursides> budsC;
+        vector<Foursides> budsD;
+    
+        int bdone;      //for stopping the square disintigration
+        int cdone;
 };
