@@ -9,8 +9,8 @@ void ofApp::setup(){
     ofBackground(0);
     
     
-    for(int i = 0; i < 35; i++){
-        for(int j = 0; j < 35; j++) {
+    for(int i = 0; i < 30; i++){
+        for(int j = 0; j < 30; j++) {
             Bit temp;
             buds.push_back(temp);
             buds[i].setup();
@@ -19,8 +19,8 @@ void ofApp::setup(){
         }
     }
     
-    for(int i = 0; i < 35; i++){
-        for(int j = 0; j < 35; j++) {
+    for(int i = 0; i < 30; i++){
+        for(int j = 0; j < 30; j++) {
             Bit temp;
             budsB.push_back(temp);
             budsB[i].setup();
@@ -42,17 +42,17 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-    ofTranslate(150,150);
+    ofTranslate(100,50);
     
-    float time = ofGetElapsedTimef();
+    float time = ofGetElapsedTimef()/2;
     float sinTime = sin(time);
     float conTime = cos(time);
     
     ofSetColor(161, 252, 70);
     
-    for(int i = 0; i < 35; i++){
-        for(int j = 0; j < 35; j++) {
-            budsB[i].update(i+i*20, j+ j*20, ofMap(cos(time * i/2), -1, 1, 1, 20));
+    for(int i = 0; i < 30; i++){
+        for(int j = 0; j < 30; j++) {
+            budsB[i].update(i+i*20, j+ j*20, ofMap(cos(time * i), -1, 1, 1, 20));
             budsB[i].draw();
         }
     }
@@ -60,9 +60,9 @@ void ofApp::draw(){
     ofSetColor(255, 79, 243);
     
     
-    for(int i = 0; i < 35; i++){
-        for(int j = 0; j < 35; j++) {
-            buds[i].update(i+i*20, j+ j*20, ofMap(sin(time * j/2), -1, 1, 1, 20));
+    for(int i = 0; i < 30; i++){
+        for(int j = 0; j < 30; j++) {
+            buds[i].update(i+i*20, j+ j*20, ofMap(sin(time * j), -1, 1, 1, 20));
             buds[i].draw();
         }
     }
